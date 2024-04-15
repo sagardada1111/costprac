@@ -124,15 +124,18 @@ print(cov(a$t1,a$data))
 <h3>practical no6:- Using R/pyhton import the data from excel /.csv file and draw the skewness</h3>
 <p>
 	<pre>
+library(e1071)
 library(readxl)
-data<-c(1,2,2,3,3,3,4,4,4,4,5,5,8,8,8,8)
-hist(data,freq=FALSE,main="Histogram with density",xlab= "values",ylab="Density")
 
-lines(density(data),col="blue")
-skew<-skewness(data)
-test(x=max(data)-1,y=3,labels=paste("Skewness",round(skew,2))
+data <- c(1, 2, 2, 3, 3, 3, 4, 4, 4, 4, 5, 5, 8, 8, 8, 8)
 
-test(x=max(data)-1,y=0.3,labels=paste("Skewness",round(skew,2))
+hist(data, freq = FALSE, main = "Histogram with density", xlab = "values", ylab = "Density")
+lines(density(data), col = "blue")
+
+skew <- skewness(data)
+text(x = max(data) - 1, y = 3, labels = paste("Skewness:", round(skew, 2)))
+text(x = max(data) - 1, y = 0.3, labels = paste("Skewness:", round(skew, 2)))
+
 	</pre>
 </p>
 </body>
